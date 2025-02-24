@@ -1,0 +1,23 @@
+# 🛑 Ignorer les dépendances installées par Composer
+/vendor/
+composer.lock
+
+# 🛑 Ignorer les fichiers de configuration sensibles
+.env
+.env.local
+.env.*.local
+
+# 🛑 Ignorer les fichiers système et caches
+/.idea/             # Si tu utilises PHPStorm
+/.vscode/           # Paramètres de VSCode
+/node_modules/      # Si un jour tu utilises Node.js
+/public/uploads/    # Si tu permets aux utilisateurs d'uploader des fichiers
+
+# 🛑 Ignorer les fichiers logs et caches générés
+var/log/
+var/cache/
+
+# 🛑 Ignorer les fichiers temporaires
+*.log
+*.cache
+*.lock
