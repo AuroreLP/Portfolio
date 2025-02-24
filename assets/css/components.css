@@ -1,0 +1,22 @@
+
+/* BUTTONS */
+.btn {
+  margin-top: 20px;
+  color: #2b4743; /* Default text color */
+  border: solid 2px #2b4743;
+  background-color: antiquewhite;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  transition: transform 0.5s , color 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  color: #2b4743;
+  border-color:  #38d6c2;
+}
+
+/* LINKS */

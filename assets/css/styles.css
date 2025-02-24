@@ -1,0 +1,706 @@
+/* Reset CSS */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Young+Serif&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* permet d'inclure le padding et la bordure */
+}
+
+
+body {
+  font-family: 'montserrat', sans-serif;
+  line-height: 1.5;
+  color: #2b4743;
+  background-color: rgb(250, 235, 215);
+}
+
+/* Barre de navigation */
+header.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgb(250, 235, 215);
+  color: #2b4743;
+  z-index: 1000;
+  border-bottom: solid 1px rgb(250, 235, 215);
+  box-shadow: 0px 8px 8px -6px rgba(209, 193, 172, 0.3);
+}
+
+header.navbar .container {
+  display: flex;
+  justify-content: space-between; /* Par défaut pour gérer logo et burger */
+  align-items: center;
+  height: 80px;
+  padding: 1rem 2rem;
+}
+
+
+
+header.navbar .logo {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+
+header.navbar .burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+header.navbar .burger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #2b4743;
+  border-radius: 3px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Default state for the nav-menu (hidden for mobile) */
+header.navbar .nav-menu {
+  display: none; /* Hidden by default on mobile */
+  flex-direction: column; /* Stack links vertically by default */
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 80px;
+  right: 0;
+  width: 100%; /* Full width for mobile */
+  background: #2b4743; /* Dark background for mobile menu */
+  padding: 1rem 0;
+  z-index: 1000; /* Ensure it appears above content */
+  gap: 1rem; /* Add spacing between links */
+}
+
+/* Style for the list */
+header.navbar .nav-menu ul {
+  display: flex; /* Ensure flex layout */
+  flex-direction: column; /* Stack items in a column */
+  align-items: right; /* Align links to the center */
+  gap: 1rem; /* Add spacing between items */
+  list-style: none; /* Remove default bullet points */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+header.navbar .nav-menu li {
+  display: inline; /* Assurez-vous que chaque <li> soit inline */
+}
+
+/* Style for the links */
+header.navbar .nav-menu a {
+
+  color: antiquewhite;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem; /* Ajout d'espace autour des liens */
+  transition: color 0.3s ease;
+}
+
+/* Hover effect for links */
+header.navbar .nav-menu a:hover {
+  color: #38d6c2; /* Couleur au survol */
+  font-weight: bold;
+}
+
+/* When the menu is open on mobile */
+header.navbar .nav-menu.open {
+  display: flex;
+  z-index: 1001; /* Ensure it displays above everything else */
+  border: solid 1px #efe4d5;
+}
+
+/* Bouton de fermeture (croix) */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: #efe4d5;
+  display: none; /* Caché par défaut */
+}
+
+/* Lorsque le menu est ouvert */
+.nav-menu.open .close-btn {
+  display: block; /* S'affiche seulement quand le menu est ouvert */
+}
+
+/* Empêcher la croix d'apparaître sur les grands écrans */
+@media (min-width: 769px) {
+  .close-btn {
+    display: none !important;
+  }
+}
+
+
+/* Ajustement pour le contenu principal */
+main {
+  margin-top: 60px; /* Compense la hauteur de la navbar */
+}
+
+
+/* PARALLAX EFFECT */
+.parallax {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  z-index: -1; /* Passe encore plus bas que les sections */
+}
+
+.parallax-1 {
+  background-image: url('https://via.placeholder.com/1200x800');
+}
+
+.parallax-2 {
+  background-image: url('https://via.placeholder.com/1200x800');
+}
+
+.parallax-3 {
+  background-image: url('https://via.placeholder.com/1200x800');
+}
+
+.parallax-4 {
+  background-image: url('https://via.placeholder.com/1200x800');
+}
+
+/* Sections */
+section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* SECTION 1 - ACCUEIL */
+/* CONTENEUR de l'image */
+.image-container {
+  position: relative; /* Nécessaire pour positionner le texte par rapport à l'image */
+  display: inline-block;
+  width: 100%; /* Facultatif, selon la taille voulue */
+  max-width: 1200px; /* Ajustez selon vos besoins */
+  margin: 0 auto; /* Centré */
+}
+
+/* L'image elle-même */
+.image-container img {
+  display: block;
+  width: 100%; /* Adapte l'image au conteneur */
+  height: auto; /* Conserve les proportions de l'image */
+}
+
+/* Texte centré posé sur l'image */
+.image-container .centered-text {
+  position: absolute; /* Positionnement relatif au conteneur */
+  top: 50%; /* Centre verticalement */
+  left: 50%; /* Centre horizontalement */
+  transform: translate(-50%, -50%); /* Ajuste l'alignement */
+  color: #2b4743; /* Couleur du texte */
+  font-size: 3vw; /* Taille du texte */
+  text-align: center;
+  width: 90%; /* Ajuste la largeur pour les petits écrans */
+  box-sizing: border-box; /* Inclut le padding dans la largeur */
+}
+
+.image-container .centered-text h1{
+  font-size: 4vw; /* Taille du texte */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Ajoute un effet d'ombre pour le contraste */
+}
+
+
+/* SECTION 2 - COMPETENCES */
+.skills-section {
+  flex-direction: column;
+  text-align: center;
+  padding: 4rem 2rem;
+
+}
+
+.skills-section h1 {
+  font-size: 2.5rem;
+  color: #2b4743;
+  margin-bottom: 20px;
+}
+
+
+/* Élément individuel */
+.skill-item {
+  border: 1px solid #2b4743b1;
+  padding: 2rem;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.skill-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px #38d6c2;
+}
+
+/* Icônes des compétences */
+.skill-item i {
+  font-size: 3rem;
+  color: #38d6c2;
+  margin-bottom: 1rem;
+}
+
+/* Titres des compétences */
+.skill-item h3 {
+  font-size: 1.5rem;
+  color: #2b4743;
+  margin-bottom: 1rem;
+}
+
+/* Descriptions des compétences */
+.skill-item p {
+  color: #2b4743;
+  font-size: 1rem;
+}
+
+/* SECTION 3 - EXPERIENCE */
+
+/* Section Expérience */
+.exp-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.exp-section h1 {
+  font-size: 2.5rem;
+  color: #2b4743;
+  margin-bottom: 20px;
+}
+
+.experience {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Ajoute un espace constant entre les blocs */
+  align-items: stretch; /* Assure que les blocs aient la même largeur */
+}
+
+
+/* TIMELINE*/
+.infos, .other-exp {
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.infos1 {
+  position: relative;
+}
+
+.infos2 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.infos h2, .other-exp h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.infos1::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #38d6c2;
+}
+
+/* Timeline Item */
+.timeline-item {
+  position: relative;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-content {
+  position: relative;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  text-align: start;
+}
+
+.timeline-content h3 {
+  font-size: 1.2rem;
+  color: #2b4743;
+
+}
+
+.timeline-content .timeline-date {
+  font-size: 0.9rem;
+  color: #888888;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.timeline-content p {
+  color: #555555;
+  font-size: 1rem;
+}
+
+/* Timeline Point */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 30px;
+  width: 15px;
+  height: 15px;
+  background: #38d6c2;
+  border-radius: 50%;
+  border: 3px solid #efe4d5;
+  box-shadow: 0 0 0 2px #38d6c2;
+}
+
+/* Section des diplômes */
+
+/* Grille des diplômes */
+.diploma-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem; /* Espacement entre les cartes */
+  margin-top: 1rem;
+}
+
+/* Cartes des diplômes */
+.diploma-card {
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.diploma-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Icônes */
+.diploma-card i {
+  font-size: 2.5rem; /* Taille des icônes pour mobile */
+  color: #38d6c2;
+  margin-bottom: 1rem;
+}
+
+/* Titres des diplômes */
+.diploma-card h3 {
+  font-size: 1.2rem; /* Taille adaptée au mobile */
+  color: #2b4743;
+  margin-bottom: 0.5rem;
+}
+
+/* Dates */
+.diploma-card .date {
+  font-size: 0.9rem;
+  color: #888888;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* Descriptions */
+.diploma-card p {
+  color: #555555;
+  font-size: 1rem;
+}
+
+/* section Autres */
+.other-exp {
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+}
+
+.other-skills {
+  display: flex;
+  flex-direction: column; /* Par défaut (mobile-first), empile les sections */
+  gap: 2rem; /* Ajoute un espace entre les sections */
+}
+
+/* Langues Étrangères */
+.languages h3 {
+  font-size: 1rem;
+  color: #2b4743;
+  text-decoration: underline;
+  margin-bottom: 1.5rem;
+}
+
+.language {
+  margin-bottom: 1.5rem;
+}
+
+.language span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2b4743;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background: #e3e3e3;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 0.5rem 0;
+}
+
+.progress {
+  height: 10px;
+  background: #38d6c2;
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+.language p {
+  font-size: 0.9rem;
+  color: #555555;
+}
+
+/* Soft Skills */
+.soft-skills h3 {
+  font-size: 1rem;
+  color: #2b4743;
+  text-decoration: underline;
+  margin-bottom: 1.5rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-card {
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(67, 93, 61, 0.561);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.skill-card i {
+  font-size: 2rem;
+  color: #38d6c2;
+  margin-bottom: 1rem;
+}
+
+.skill-card h4 {
+  font-size: 1rem;
+  color: #2b4743;
+}
+
+
+/* SECTION 4 - FORMULAIRE DE CONTACT */
+.contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form{
+  text-align: center;
+  border-radius: 12px;
+  padding: 30px;
+  color: #2b4743;
+  border: 2px solid #2b4743;
+}
+
+form h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #2b4743;
+}
+
+form p {
+  margin-bottom: 20px;
+}
+
+form .separation {
+  width: 100%;
+  height: 1px;
+  background-color: #38d6c2;
+  margin-bottom: 20px;
+}
+
+form .formulaire {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+form .formulaire .groupe {
+  margin-top: 20px;
+  text-align: start;
+}
+
+
+form .formulaire .gauche .groupe input {
+  margin-top: 5px;
+  padding: 10px 5px 10px 10px;
+  border: 1px solid #2b4743;
+  border-radius: 8px;
+  width: 100%;
+  outline-color: #38d6c2;
+}
+
+form .formulaire .droite .groupe textarea {
+  margin-top: 5px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #2b4743;
+  outline-color: #38d6c2;
+  resize: none;
+  width: 100%;
+}
+
+
+
+/* FORMAT DESKTOP ET TABLETTE */
+/* NAVBAR POUR TABLET ET PLUS */
+@media (min-width: 768px) {
+  header.navbar {
+    display: flex;
+    justify-content: right;
+  }
+
+  header.navbar .container {
+    justify-content: center; /* Centre tout */
+  }
+
+  header.navbar .burger {
+    display: none; /* Le burger disparaît */
+  }
+
+  header.navbar .nav-menu {
+    display: flex; /* Always visible on tablet/desktop */
+    flex-direction: row; /* Align links horizontally */
+    justify-content: center;
+    background: none; /* No background on desktop */
+    position: static; /* Reset positioning */
+    width: auto; /* Remove full width */
+    padding: 0;
+    gap: 2rem; /* Add spacing between links */
+  }
+
+  header.navbar .nav-menu ul {
+    flex-direction: row; /* Inline links */
+    justify-content: center; /* Centrage horizontal */
+  }
+
+  header.navbar .nav-menu a {
+    color: #2b4743;
+  }
+
+  header.navbar .logo {
+    position: absolute;
+    left: 2rem; /* Repositionne le logo */
+  }
+
+  /* ACCUEIL POUR TABLET ET PLUS */
+  .image-container .centered-text {
+    font-size: 2vw; /* Taille légèrement réduite pour les tablettes */
+  }
+
+  .image-container .centered-text h1{
+    font-size: 3vw; /* Taille du texte */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Ajoute un effet d'ombre pour le contraste */
+  }
+
+  /* COMPETENCES POUR TABLET ET PLUS */
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .skills .skill-item {
+    flex: 1;
+    min-width: 22%;
+    margin: 10px;
+  }
+
+    /* EXPERIENCE POUR TABLET ET PLUS  */
+    .experience {
+      flex-direction: row; /* Aligne les blocs côte à côte */
+      justify-content: space-between; /* Distribution équitable */
+      flex-wrap: wrap;
+      align-items: flex-start; /* Les blocs s'alignent en haut sur les écrans larges */
+    }
+  
+    .experience .infos,
+    .experience .infos2 {
+      flex: 1; /* Les deux sections occupent la même largeur */
+      margin: 10px; /* Ajoute de l'espace entre les sections */
+      max-width: calc(50% - 1rem); /* Compense l'espace entre les deux sections */
+    }
+
+    .other-skills {
+      flex-direction: row;
+      gap: 2rem;
+    }
+
+    .languages {
+      flex: 1 1 33%; /* Occupe 1/3 de l'écran */
+    }
+
+    .soft-skills {
+      flex: 2 1 67%; /* Occupe 2/3 de l'écran */
+    }
+
+  .diploma-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Plusieurs colonnes */
+  }
+
+  .diploma-card i {
+    font-size: 3rem; /* Augmente la taille des icônes */
+  }
+
+  .diploma-card h3 {
+    font-size: 1.2rem; /* Augmente la taille des titres */
+  }
+
+    /* FORMULAIRE POUR TABLET ET PLUS */
+  form .formulaire .gauche {
+    margin-top: 20px;
+    width: 40%;
+  }
+  
+  form .formulaire .droite {
+    margin-left: 60px;
+    margin-top: 20px;
+    width: 40%;
+  }
+
+}
+
