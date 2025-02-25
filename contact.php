@@ -74,7 +74,7 @@ if (isset($_POST['email'], $_POST['lastname'], $_POST['name'], $_POST['tel'], $_
                           <strong>Message :</strong> <br> $message";
 
         if ($mail->send()) {
-            echo json_encode(['status' => 'success', 'message' => 'Message envoyé avec succès.']);
+            echo json_encode(['status' => 'success', 'message' => 'Merci pour votre message.']);
         } else {
             echo json_encode(['status' => 'error', 'message' => 'Erreur lors de l\'envoi : ' . $mail->ErrorInfo]);
         }

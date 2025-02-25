@@ -67,28 +67,28 @@ document.addEventListener('DOMContentLoaded', () => {
       let formData = new FormData(contactForm); // Récupère les données du formulaire
 
       fetch('contact.php', {
-          method: 'POST',
-          headers: {
-            'X-Requested-With': 'XMLHttpRequest' // ✅ Ajoute cet en-tête pour éviter le blocage
-        },
-        body: formData
-    })
-      .then(response => response.json())
-      .then(data => {
-          if (notification) {
-              notification.style.display = 'block';
-              notification.innerText = data.message; // Affiche le message
+        method: 'POST',
+        headers: {
+          'X-Requested-With': 'XMLHttpRequest' // ✅ Ajoute cet en-tête pour éviter le blocage
+      },
+      body: formData
+  })
+    .then(response => response.json())
+    .then(data => {
+        if (notification) {
+            notification.style.display = 'block';
+            notification.innerText = data.message; // Affiche le message
 
-              if (data.status === 'success') {
-                  contactForm.reset(); // Réinitialise le formulaire
-              }
-          }
-      })
-      .catch(error => {
-          console.warn('Une erreur est survenue. Veuillez réessayer plus tard.');
-      });
-    };
-  }
+            if (data.status === 'success') {
+                contactForm.reset(); // Réinitialise le formulaire
+            }
+        }
+    })
+    .catch(error => {
+        console.warn('Une erreur est survenue. Veuillez réessayer plus tard.');
+    });
+  };
+}
 });
 
 
