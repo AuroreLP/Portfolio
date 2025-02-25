@@ -575,7 +575,7 @@ form .formulaire .gauche .groupe input {
   outline-color: #38d6c2;
 }
 
-form .formulaire .droite .groupe textarea {
+form .formulaire .droite .groupe textarea{
   margin-top: 5px;
   padding: 10px;
   border-radius: 8px;
@@ -585,6 +585,15 @@ form .formulaire .droite .groupe textarea {
   width: 100%;
 }
 
+form .formulaire .droite .groupe input {
+  margin-top: 5px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #2b4743;
+  outline-color: #38d6c2;
+  resize: none;
+  width: 100%;
+}
 
 
 /* FORMAT DESKTOP ET TABLETTE */

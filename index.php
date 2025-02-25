@@ -261,11 +261,11 @@
           <div class="droite">
               <div class="groupe">
                   <label for="subject">Sujet<sup>*</sup></label>
-                  <input type="text" name="subject" id="subject" placeholder="Entrez le sujet de votre message" required>
+                  <input type="text" id="subject" name="subject" placeholder="Entrez le sujet de votre message" required></input> <!-- Ajout du required ici -->
               </div>
               <div class="groupe">
                   <label for="msg">Votre message<sup>*</sup></label>
-                  <textarea id="msg" name="msg" placeholder="Ecrivez votre message" maxlength="150" rows="19" required></textarea> <!-- Ajout du required ici -->
+                  <textarea id="msg" name="msg" placeholder="Ecrivez votre message" maxlength="150" rows="13" required></textarea> <!-- Ajout du required ici -->
               </div>
           </div>
       </div>
