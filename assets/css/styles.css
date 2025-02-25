@@ -221,6 +221,7 @@ section {
 }
 
 
+
 /* SECTION 2 - COMPETENCES */
 .skills-section {
   flex-direction: column;
@@ -383,26 +384,22 @@ section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem; /* Espacement entre les cartes */
-  margin-top: 1rem;
+  margin-top: 0.8 rem;
 }
 
 /* Cartes des diplômes */
 .diploma-card {
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.diploma-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  position: relative;
 }
 
 /* Icônes */
 .diploma-card i {
-  font-size: 2.5rem; /* Taille des icônes pour mobile */
+  font-size: 1.5rem; /* Taille des icônes pour mobile */
   color: #38d6c2;
   margin-bottom: 1rem;
 }
@@ -414,18 +411,31 @@ section {
   margin-bottom: 0.5rem;
 }
 
+
+.diploma-card .date, .diploma-card p {
+  display: none; /* Masquez le texte par défaut */
+}
+
 /* Dates */
 .diploma-card .date {
   font-size: 0.9rem;
   color: #888888;
   margin-bottom: 1rem;
-  display: block;
 }
 
 /* Descriptions */
 .diploma-card p {
   color: #555555;
   font-size: 1rem;
+}
+
+.diploma-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.diploma-card:hover .date, .diploma-card:hover p {
+  display: block; /* Affichez le texte au survol */
 }
 
 /* section Autres */
@@ -444,12 +454,6 @@ section {
 }
 
 /* Langues Étrangères */
-.languages h3 {
-  font-size: 1rem;
-  color: #2b4743;
-  text-decoration: underline;
-  margin-bottom: 1.5rem;
-}
 
 .language {
   margin-bottom: 1.5rem;
@@ -677,14 +681,6 @@ form .formulaire .droite .groupe input {
     .other-skills {
       flex-direction: row;
       gap: 2rem;
-    }
-
-    .languages {
-      flex: 1 1 33%; /* Occupe 1/3 de l'écran */
-    }
-
-    .soft-skills {
-      flex: 2 1 67%; /* Occupe 2/3 de l'écran */
     }
 
   .diploma-grid {
