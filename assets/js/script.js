@@ -64,12 +64,15 @@ document.addEventListener('DOMContentLoaded', () => {
     contactForm.onsubmit = function(event) {
       event.preventDefault(); // Empêche l'envoi normal du formulaire
 
-      var formData = new FormData(this); // Récupère les données du formulaire
+      let formData = new FormData(contactForm); // Récupère les données du formulaire
 
       fetch('contact.php', {
           method: 'POST',
-          body: formData
-      })
+          headers: {
+            'X-Requested-With': 'XMLHttpRequest' // ✅ Ajoute cet en-tête pour éviter le blocage
+        },
+        body: formData
+    })
       .then(response => response.json())
       .then(data => {
           if (notification) {
@@ -77,12 +80,12 @@ document.addEventListener('DOMContentLoaded', () => {
               notification.innerText = data.message; // Affiche le message
 
               if (data.status === 'success') {
-                  this.reset(); // Réinitialise le formulaire
+                  contactForm.reset(); // Réinitialise le formulaire
               }
           }
       })
       .catch(error => {
-          console.error('Erreur:', error);
+          console.warn('Une erreur est survenue. Veuillez réessayer plus tard.');
       });
     };
   }

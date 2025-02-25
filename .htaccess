@@ -1,0 +1,11 @@
+# Empêche l'accès direct aux fichiers PHP sensibles
+<FilesMatch "(contact.php|config.php)">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Interdire l'accès au .env (utile si tu stockes des credentials)
+<Files .env>
+    Order Allow,Deny
+    Deny from all
+</Files>
