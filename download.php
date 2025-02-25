@@ -1,6 +1,6 @@
 <?php
 // Sécurisation du fichier
-$filename = 'downloads/cv-aurore-le-perff.pdf';
+$filename = 'assets/downloads/cv-aurore-le-perff.pdf';
 
 // Vérifier si le fichier existe
 if (!file_exists($filename)) {

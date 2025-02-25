@@ -12,6 +12,8 @@ composer.lock
 /.vscode/           # Paramètres de VSCode
 /node_modules/      # Si un jour tu utilises Node.js
 /public/uploads/    # Si tu permets aux utilisateurs d'uploader des fichiers
+.DS_Store
+
 
 # 🛑 Ignorer les fichiers logs et caches générés
 var/log/

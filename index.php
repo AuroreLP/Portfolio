@@ -8,8 +8,7 @@
   <title>CV Aurore Le Perff</title>
   <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="stylesheet" href="/assets/css/components.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </head>
 <body>
@@ -45,13 +44,17 @@
           <h1>DÉVELOPPEUSE FULL-STACK</h1>
           <p>je suis actuellement en reconversion professionnelle <br> et <strong>recherche activement un stage</strong> pour mettre en pratique <br> mes nouvelles connaissances en front et backend.</p>
           <div class="d-flex align-items-center">
-            <a href="download.php" download>
-                <button class="btn btn-dark me-2">Téléchargez mon CV</button>
-            </a>          
-            <a href="#contact">
-                <button class="btn btn-dark">Contactez-moi!</button>
-            </a>
-        </div>        
+            <div>
+              <a href="download.php" download>
+                  <button class="btn btn-dark me-2 p-2 p-sm-1">Téléchargez mon CV</button>
+              </a>      
+            </div>
+            <div>
+              <a href="#contact">
+                  <button class="btn btn-dark p-2 p-sm-1">Contactez-moi!</button>
+              </a>
+            </div>
+          </div>        
         </div>
       </div>
     </section>
@@ -171,61 +174,58 @@
                 <p>Université de Picardie Jules Vernes, spécialisation en droit privé.</p>
               </div>
             </div>
-        </div>          
+            <div class="other languages">
+              <h2>Langues Étrangères</h2>
+              <div class="d-flex">
+                <div class="language">
+                  <span>Anglais</span>
+                  <div class="progress-bar">
+                    <div class="progress" style="width: 90%;"></div>
+                  </div>
+                  <p>Niveau : Maîtrise (C2)</p>
+                </div>
+                <div class="language">
+                  <span>Grec</span>
+                  <div class="progress-bar">
+                    <div class="progress" style="width: 75%;"></div>
+                  </div>
+                  <p>Niveau : Avancé (B2)</p>
+                </div>
+              </div>
+          </div>    
+        </div>    
       </div>
         <!-- Section other-exp - Langages et softs skills -->
       <div class="other-exp">
-        <h2>Compétences transversales</h2>
-        <div class="other-skills">
-          <!-- Langues Étrangères -->
-          <div class="other languages">
-            <h3>Langues Étrangères</h3>
-            <div class="language">
-              <span>Anglais</span>
-              <div class="progress-bar">
-                <div class="progress" style="width: 90%;"></div>
-              </div>
-              <p>Niveau : Maîtrise (C2)</p>
-            </div>
-            <div class="language">
-              <span>Grec</span>
-              <div class="progress-bar">
-                <div class="progress" style="width: 75%;"></div>
-              </div>
-              <p>Niveau : Avancé (B2)</p>
-            </div>
-          </div>
-          <!-- Soft Skills -->
-          <div class="other soft-skills">
-            <h3>Soft Skills</h3>
-            <div class="skills-grid">
-              <div class="skill-card">
+        <h2>Soft skills</h2>
+          <div class="soft-skills">
+            <div class="skills-grid row">
+              <div class="skill-card col-12 col-sm-6 col-md-4 col-lg-2">
                 <i class="fas fa-users"></i>
                 <h4>Travail d'équipe</h4>
               </div>
-              <div class="skill-card">
+              <div class="skill-card col-12 col-sm-6 col-md-4 col-lg-2">
                 <i class="fas fa-lightbulb"></i>
                 <h4>Créativité</h4>
               </div>
-              <div class="skill-card">
+              <div class="skill-card col-12 col-sm-6 col-md-4 col-lg-2">
                 <i class="fas fa-clock"></i>
                 <h4>Gestion du temps</h4>
               </div>
-              <div class="skill-card">
+              <div class="skill-card col-12 col-sm-6 col-md-4 col-lg-2">
                 <i class="fas fa-comments"></i>
                 <h4>Communication</h4>
               </div>
-              <div class="skill-card">
+              <div class="skill-card col-12 col-sm-6 col-md-4 col-lg-2">
                 <i class="fas fa-handshake"></i>
                 <h4>Adaptabilité</h4>
               </div>
-              <div class="skill-card">
-                <i class="fas fa-magnifying-glass"></i>
+              <div class="skill-card col-12 col-sm-6 col-md-4 col-lg-2">
+                <i class="fa-solid fa-magnifying-glass"></i>
                 <h4>Sens du détail</h4>
               </div>
             </div>
           </div>
-        </div>
       </div>
     </section>
 
@@ -237,7 +237,6 @@
           <h1>Contactez-moi</h1>
           <p>Pour en savoir plus sur mon parcours et mes disponibilités, veuillez remplir ce formulaire. Je ferai en sorte de vous répondre dans les 24h.</p>
       </div>
-      <div id="notification" style="display:none; color: green;"></div>
       <div class="separation"></div>
       <div class="formulaire">
           <div class="gauche">
@@ -261,17 +260,18 @@
           <div class="droite">
               <div class="groupe">
                   <label for="subject">Sujet<sup>*</sup></label>
-                  <input type="text" name="subject" id="subject" placeholder="Entrez le sujet de votre message" required>
+                  <input type="text" id="subject" name="subject" placeholder="Entrez le sujet de votre message" required></input> <!-- Ajout du required ici -->
               </div>
               <div class="groupe">
                   <label for="msg">Votre message<sup>*</sup></label>
-                  <textarea id="msg" name="msg" placeholder="Ecrivez votre message" maxlength="150" rows="19" required></textarea> <!-- Ajout du required ici -->
+                  <textarea id="msg" name="msg" placeholder="Ecrivez votre message" maxlength="150" rows="13" required></textarea> <!-- Ajout du required ici -->
               </div>
           </div>
       </div>
       <div class="pied-formulaire">
           <input class="btn btn-dark" type="submit" value="Envoyer le message">
       </div>
+      <div id="notification" style="display:none; color: green;"></div>
     </form>
 
     </section>
