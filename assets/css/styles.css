@@ -17,16 +17,17 @@ body {
 
 /* Barre de navigation */
 header.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: rgb(250, 235, 215);
-  color: #2b4743;
-  z-index: 1000;
-  border-bottom: solid 1px rgb(250, 235, 215);
-  box-shadow: 0px 8px 8px -6px rgba(209, 193, 172, 0.3);
-}
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgb(250, 235, 215);
+    color: #2b4743;
+    z-index: 1000;
+    border-bottom: solid 1px rgb(250, 235, 215);
+    box-shadow: 0px 8px 8px -6px rgba(209, 193, 172, 0.3);
+  }
+
 
 header.navbar .container {
   display: flex;

@@ -6,8 +6,8 @@
   <meta name="description" content="Développeuse web en reconversion, recherche un stage en développement front et back-end. Découvrez mon CV et mes compétences.">
   <meta name="keywords" content="Développeur web, Développeuse web, Stage, Frontend, Backend, PHP, JavaScript">  
   <title>CV Aurore Le Perff</title>
-  <link rel="stylesheet" href="/assets/css/styles.css">
-  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/components.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </head>
@@ -15,12 +15,12 @@
   <header class="navbar">
     <div class="container">
       <a class="logo">
-        <img src="/assets/img/logo AL dark.png" alt="Logo aurore le perff" loading="lazy" style="height: 60px;">
+      <img src="/assets/img/logo AL dark.png" alt="Logo aurore le perff" loading="lazy" style="height: 60px;">
       </a>
       <button class="burger" aria-label="Menu">
-        <span></span>
-        <span></span>
-        <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
       </button>
       <nav class="nav-menu">
         <ul>
@@ -29,10 +29,9 @@
           <li><a href="#experience">Expérience</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-      </nav>
+    </nav>
     </div>
   </header>
-
   <main>
     <!-- Section 1 - Accueil -->
     <section id="accueil" class="parallax parallax-1 home-section">
