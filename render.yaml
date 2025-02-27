@@ -1,9 +1,13 @@
+version: 1
 services:
-  web:
-    type: web
-    name: aurore-dev
+  - type: web
+    name: aurore-dev  # Nom descriptif pour ton service
     env: php
     plan: free
-    runtime: php-8.4 # ou la version que tu utilises
-    buildCommand: composer install
-    startCommand: php -S 0.0.0.0:10000 -t public
+    buildCommand: "composer install"
+    startCommand: "php -S 0.0.0.0:10000 -t public"  # Modifie selon la structure de ton projet
+    routes:
+      - type: http
+        name: web
+        path: /
+        service: aurore-dev  # Utilise le même nom que ci-dessus
