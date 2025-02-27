@@ -1,7 +1,7 @@
 services:
   web:
     type: web
-    name: <ton_nom_de_service>
+    name: aurore-dev
     env: php
     plan: free
     runtime: php-8.4 # ou la version que tu utilises
